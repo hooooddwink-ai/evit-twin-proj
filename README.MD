@@ -18,7 +18,9 @@
 * **Flask (Python)** — веб-сервер для Captive Portal
 
 ## Как запустить
+
 1. Установите зависимости:
+
 ```bash
 sudo apt update
 sudo apt install hostapd dnsmasq python3 python3-flask
@@ -26,10 +28,3 @@ sudo apt install hostapd dnsmasq python3 python3-flask
 2. Перейдите в папку с проектом и запустите скрипт:
 ```bash
 sudo ./run.sh
-
-## Структура проекта
-* **portal.py** — код веб-сервера на Flask
-* **run.sh** — скрипт автоматического запуска
-* **templates/** — HTML-шаблоны (дисклеймер и форма входа)
-* **evil.conf** — конфигурационный файл hostapd
-* **dnsmasq.conf** — конфигурационный файл dnsmasq
