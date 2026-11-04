@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Внимание</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .box {
+            background: #2a2a2a;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            text-align: center;
+            border: 2px solid #ff4444;
+        }
+        h1 { color: #ff4444; }
+        p { line-height: 1.6; }
+        button {
+            margin-top: 20px;
+            padding: 15px 40px;
+            font-size: 16px;
+            background: #444;
+            color: #888;
+            border: none;
+            border-radius: 5px;
+            cursor: not-allowed;
+        }
+        button.active {
+            background: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        #timer { font-size: 24px; color: #ff4444; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>⚠️ ВНИМАНИЕ</h1>
+        <p>
+            Это <b>учебный проект</b> по кибербезопасности.<br><br>
+            <b>НЕ ВВОДИТЕ</b> свои настоящие пароли, логины или личные данные.<br><br>
+            Все данные, которые вы введёте, являются <b>тестовыми</b> и используются только для демонстрации уязвимости.
+        </p>
+        <p>Кнопка активируется через <span id="timer">10</span> сек.</p>
+        <button id="btn" disabled>Продолжить</button>
+    </div>
+
+    <script>
+        let seconds = 10;
+        const timer = document.getElementById('timer');
+        const btn = document.getElementById('btn');
+
+        const interval = setInterval(() => {
+            seconds--;
+            timer.textContent = seconds;
+            if (seconds <= 0) {
+                clearInterval(interval);
+                btn.disabled = false;
+                btn.classList.add('active');
+                btn.textContent = 'Я понимаю, продолжить';
+            }
+        }, 1000);
+
+        btn.addEventListener('click', () => {
+            window.location.href = '/google';
+        });
+    </script>
+</body>
+</html>
