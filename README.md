@@ -24,4 +24,5 @@
    sudo apt install hostapd dnsmasq python3 python3-flask
 
 2. Перейдите в папку с проектом и запустите скрипт:
+   ```bash
    sudo ./run.sh
